@@ -1,34 +1,201 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #fefefe;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.App {
+  min-height: 100vh;
 }
 
-.App-link {
-    color: #61dafb;
+/* Hover effects for buttons */
+button:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Smooth transitions for cards */
+.card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fb923c, #f97316);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c);
+}
+
+/* Form focus effects */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom badge colors */
+.badge-orange {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+/* Image hover effects */
+img {
+  transition: all 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Tab animations */
+[role="tablist"] button {
+  transition: all 0.2s ease-in-out;
+}
+
+[role="tablist"] button:hover {
+  background-color: rgba(249, 115, 22, 0.1);
+}
+
+/* Micro interactions */
+.interactive-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.interactive-element:hover::before {
+  left: 100%;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Enhanced spacing */
+.section-spacing {
+  margin: 2rem 0;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+/* Custom orange theme colors */
+:root {
+  --primary-orange: #f97316;
+  --secondary-orange: #fb923c;
+  --light-orange: #fed7aa;
+  --dark-orange: #c2410c;
+  --bg-orange: #fff7ed;
+}
+
+/* Glassmorphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Success/Error states */
+.state-success {
+  border-left: 4px solid #10b981;
+  background-color: #ecfdf5;
+}
+
+.state-error {
+  border-left: 4px solid #ef4444;
+  background-color: #fef2f2;
+}
+
+/* Enhanced form styling */
+.form-container {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Button improvements */
+.btn-primary {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(249, 115, 22, 0.4);
 }
